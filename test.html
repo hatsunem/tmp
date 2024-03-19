@@ -3,11 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clickable Image</title>
+    <title>Clickable Title</title>
 </head>
 <body>
-    <a href="smartnews://openLink?url=https%3A%2F%2Fabema.tv%2Fvideo%2Fepisode%2F1q2pidp06789r1vou90ugc8d6n%3Fac%3D0%26pl%3D1%26utm_medium%3Dweb%26utm_source%3Dalliance%26utm_campaign%3Dsmartnews_ap_soccer_belgium_highlight_240226&enableShare=false">
-        <img src="https://times-abema.ismcdn.jp/mwimgs/f/4/-/img_f4cff58127787900462591942d04446f65100.jpg">
-    </a>
+<div id="title"></div>
+
+<script>
+    window.onload = function () {
+        const title = new URLSearchParams(window.location.search).get("title");
+        const titleDiv = document.getElementById("title");
+        titleDiv.innerHTML = `
+            <a href="smartnews://openLink?url=https%3A%2F%2Fabema.tv%2Fvideo%2Fepisode%2F1q2pidp06789r1vou90ugc8d6n%3Fac%3D0%26pl%3D1%26utm_medium%3Dweb%26utm_source%3Dalliance%26utm_campaign%3Dsmartnews_ap_soccer_belgium_highlight_240226&enableShare=false">
+                <h2>${title}</h2>
+            </a>
+        `;
+    };
+</script>
 </body>
 </html>
